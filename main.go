@@ -15,8 +15,10 @@ import (
 )
 
 type api struct {
-
+	AddClient
 }
+
+var _ AddClient = &api{}
 
 func (s *api) Sum(ctx oldcontext.Context, req *SumRequest) (*SumReply, error) {
 	rep := &SumReply{
